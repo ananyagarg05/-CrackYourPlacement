@@ -1,0 +1,19 @@
+287.Find the Duplicate Number
+//code 
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        int l=0;
+        int h=1;
+        sort(nums.begin(),nums.end());
+        while(h<nums.size()){
+        if(nums[l]!=nums[h])
+        {  
+            l++;
+            h++;
+        }
+        else
+           { return nums[l];} }
+    return -1;
+    }
+};
