@@ -1,0 +1,42 @@
+680. Valid Palindrome II
+//code
+class Solution {
+public:
+ bool checkPalindrome(string str,int s,int e)
+ {
+    while(s<=e)
+    {
+        if(str[s]!=str[e])
+        {
+            return false;
+        }
+        else
+        {
+            s++;
+            e--;
+        }
+    }
+    return true;
+ }
+    bool validPalindrome(string s) {
+        //2 pointer obv 
+        //left to right and right to left
+        int left=0;
+        int right=s.length()-1;
+    while(left<=right)
+        {
+           if(s[left]==s[right])
+           { left++;
+            right--;
+
+           } 
+        else
+        {  //delete kr rhe hai ek 
+       bool ansOne=checkPalindrome(s,left+1,right);
+       bool ansTwo=checkPalindrome(s,left,right-1);
+       bool finalAns = ansOne || ansTwo;
+       return finalAns;       
+        }
+    }
+   return true; }
+};
